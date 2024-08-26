@@ -6,7 +6,16 @@
     <title><?php wp_title(); ?></title>
     <?php wp_head(); ?>
     <link rel="stylesheet" href="style.css">
-    
+    <script>
+        function init () {
+            const menuButton = document.querySelector('.mobile-nav-button');
+            console.log(menuButton);
+            menuButton.addEventListener('click', (e) => {
+                document.querySelector('.header-content').classList.toggle('active');
+            });
+        }
+        window.onload = init;
+    </script>
 </head>
 <body <?php body_class(); ?>>
 <header>
@@ -16,6 +25,10 @@
         <nav>
             <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
         </nav>
+        <div class="mobile-nav-button"></div>
+        <div class="mobile-nav">
+            <?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
+        </div>
     </div>
     <div class="green-shadow"></div>
 </header>

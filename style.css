@@ -470,11 +470,84 @@ a:hover {
   background: rgba(1, 25, 38, 0.8117647059);
 }
 
+.mobile-nav, .mobile-nav-button {
+  display: none;
+}
+
 @media (max-width: 991px) {
   .post-item {
     width: 48%;
   }
 }
+@media (max-width: 768px) {
+  .header-content {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .content {
+    padding: 20px;
+  }
+  .footer-content {
+    padding: 20px;
+  }
+  .footer-content nav {
+    display: block;
+  }
+  .footer-content nav ul {
+    display: block;
+    text-align: left;
+  }
+  .footer-content nav li {
+    margin: 10px 0;
+  }
+  .footer-content nav a {
+    display: inline-block !important;
+  }
+  .mobile-nav-button {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    margin: auto;
+    background: url("files/menu.png") center center/contain no-repeat;
+    padding: 15px;
+    transition: 0.3s;
+    transform: rotate(0deg);
+  }
+  nav {
+    display: none;
+  }
+  .mobile-nav {
+    width: 100%;
+    transition: 0.3s;
+    opacity: 0;
+    display: block;
+    height: 0px;
+  }
+  .mobile-nav ul {
+    display: block !important;
+    width: 100%;
+  }
+  .mobile-nav li {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .header-content .menu a {
+    margin: 10px 0;
+    padding: 10px;
+    width: auto;
+    display: inline-block;
+  }
+}
+.header-content.active .mobile-nav {
+  opacity: 1;
+  height: 250px;
+}
+.header-content.active .mobile-nav-button {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 540px) {
   .post-item {
     width: 100%;
